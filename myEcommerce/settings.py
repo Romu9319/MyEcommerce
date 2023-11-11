@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-mu%qbc^n3iur+tto&*y5bx8*p8hmi6#%aa9-mum#0dcc^dycz7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'myEcommerce.urls'
@@ -143,3 +144,16 @@ PAYPAL_TEST = True
 PAYPAL_USER_EMAIL = config("PAYPAL_USER_EMAIL")
 
 """ADMIN_USER_EMAIL = config("ADMIN_USER_EMAIL")"""
+
+"""STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") ### configuracion para archivos estaticos VERIFICAR
+STATIC_TMP =  os.path.join(BASE_DIR, "static")
+STATIC_URL = '/static/'
+
+os.makedirs(STATIC_TMP, exist_ok=True)
+os.makedirs(STATIC_ROOT, exist_ok=True)
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static')
+)"""
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
