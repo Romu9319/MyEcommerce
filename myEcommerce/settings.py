@@ -145,7 +145,7 @@ PAYPAL_USER_EMAIL = config("PAYPAL_USER_EMAIL")
 
 ADMIN_USER_EMAIL = config("ADMIN_USER_EMAIL")
 
-"""STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") ### configuracion para archivos estaticos VERIFICAR
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") ### configuracion para archivos estaticos VERIFICAR
 STATIC_TMP =  os.path.join(BASE_DIR, "static")
 STATIC_URL = '/static/'
 
@@ -154,6 +154,6 @@ os.makedirs(STATIC_ROOT, exist_ok=True)
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static')
-)"""
+)
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
